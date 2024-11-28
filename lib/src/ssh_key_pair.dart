@@ -624,7 +624,7 @@ class RsaPrivateKey implements SSHKeyPair {
   final name = 'ssh-rsa';
 
   @override
-  final type = SSHRsaSignatureType.sha256;
+  final type = SSHRsaSignatureType.sha1;
 
   final BigInt version;
   final BigInt n;
@@ -682,7 +682,7 @@ class RsaPrivateKey implements SSHKeyPair {
 
   @override
   SSHRsaSignature sign(Uint8List data) {
-    final signer = RSASigner(SHA256Digest(), '0609608648016503040201');
+    final signer = RSASigner(SHA1Digest(), '06052b0e03021a');
 
     signer.init(
       true,
